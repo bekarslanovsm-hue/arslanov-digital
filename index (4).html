@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arslanov Digital — Lidlar tasodifan kelmaydi, tizim ishlaydi</title>
+<meta name="description" content="Arslanov Digital — Meta va Telegram Ads orqali sifatli mijozlar oqimi. Audit, sozlash, CRM integratsiya, kunlik hisobot.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#060B1F;
+    --bg-panel:#0D1730;
+    --bg-panel-2:#122043;
+    --ink:#EAF1FF;
+    --ink-dim:#93A4C9;
+    --line:rgba(150,180,255,0.14);
+    --gold:#3AA7FF;
+    --gold-dim:#1B4A8A;
+    --teal:#5FE0E8;
+    --rose:#E8635C;
+    --radius:14px;
+    --maxw:1180px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:
+      radial-gradient(60% 50% at 82% 0%, rgba(58,167,255,0.16), transparent 60%),
+      radial-gradient(40% 40% at 100% 20%, rgba(95,224,232,0.10), transparent 60%),
+      var(--bg);
+    color:var(--ink);
+    font-family:'Manrope', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  .hero > .wrap{position:relative; z-index:1;}
+
+  h1,h2,h3,.display{
+    font-family:'Clash Display', sans-serif;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    line-height:1.12;
+  }
+
+  a{color:inherit; text-decoration:none;}
+  img,svg{display:block; max-width:100%;}
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  .eyebrow{
+    font-family:'Manrope', sans-serif;
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(16,22,43,0.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .logo{
+    font-family:'Clash Display', sans-serif;
+    font-weight:700;
+    font-size:18px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .logo .dot{width:8px; height:8px; border-radius:50%; background:var(--gold); display:inline-block;}
+  .nav-cta{
+    font-weight:700; font-size:14px;
+    padding:10px 20px;
+    border-radius:100px;
+    background:var(--gold);
+    color:#06122A;
+  }
+  .nav-cta:hover{background:#7ED2FF;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:88px 0 0;
+    position:relative;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(34px, 5vw, 58px);
+    margin-bottom:22px;
+  }
+  .hero h1 .accent{color:var(--gold);}
+  .hero p.lead{
+    font-size:18px;
+    color:var(--ink-dim);
+    max-width:520px;
+    margin-bottom:34px;
+  }
+  .btn-row{display:flex; gap:16px; flex-wrap:wrap; align-items:center;}
+  .btn-primary{
+    display:inline-block;
+    background:var(--gold);
+    color:#06122A;
+    font-weight:700;
+    font-size:15.5px;
+    padding:16px 30px;
+    border-radius:100px;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .btn-primary:hover{background:#7ED2FF; transform:translateY(-1px);}
+  .btn-secondary{
+    font-weight:700;
+    font-size:15px;
+    color:var(--ink);
+    border-bottom:1px solid var(--line);
+    padding-bottom:2px;
+  }
+  .btn-secondary:hover{border-color:var(--ink);}
+
+  .stat-row{
+    display:flex; gap:36px;
+    margin-top:52px;
+    padding-top:28px;
+    border-top:1px solid var(--line);
+    flex-wrap:wrap;
+  }
+  .stat b{
+    font-family:'Clash Display', sans-serif;
+    font-size:26px;
+    display:block;
+    color:var(--ink);
+  }
+  .stat span{
+    font-size:13px;
+    color:var(--ink-dim);
+  }
+
+  /* hero panel: mock dashboard card */
+  .hero-panel{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:26px;
+    position:relative;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.5);
+  }
+  .hero-panel-head{
+    display:flex; justify-content:space-between; align-items:center;
+    margin-bottom:18px;
+  }
+  .hero-panel-head .tag{
+    font-size:12px; font-weight:700;
+    color:var(--teal);
+    background:rgba(79,209,197,0.12);
+    padding:5px 12px;
+    border-radius:100px;
+  }
+  .hero-panel-head .live{
+    font-size:12px; color:var(--ink-dim);
+    display:flex; align-items:center; gap:6px;
+  }
+  .live .pulse{
+    width:7px; height:7px; border-radius:50%;
+    background:var(--teal);
+    animation:pulse 1.6s infinite ease-in-out;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1; transform:scale(1);}
+    50%{opacity:.4; transform:scale(0.7);}
+  }
+  .metric-block{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin-bottom:16px;
+  }
+  .metric{
+    background:var(--bg-panel-2);
+    border-radius:12px;
+    padding:16px;
+  }
+  .metric .lbl{font-size:12px; color:var(--ink-dim); margin-bottom:6px;}
+  .metric .val{font-family:'Clash Display'; font-size:22px;}
+  .metric .delta{font-size:12.5px; font-weight:700; margin-top:4px;}
+  .delta.up{color:var(--teal);}
+  .delta.down{color:var(--rose);}
+  .mini-bars{
+    display:flex; align-items:flex-end; gap:5px; height:56px;
+    padding:14px; background:var(--bg-panel-2); border-radius:12px;
+  }
+  .mini-bars i{
+    flex:1; background:linear-gradient(180deg, var(--gold), var(--gold-dim));
+    border-radius:3px 3px 0 0;
+  }
+
+  /* ---------- TICKER (signature element) ---------- */
+  .ticker-section{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    background:var(--bg-panel);
+    overflow:hidden;
+    margin-top:72px;
+  }
+  .ticker-track{
+    display:flex;
+    width:max-content;
+    animation:scroll-left 28s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .ticker-track{animation:none;}
+    .live .pulse{animation:none;}
+  }
+  @keyframes scroll-left{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+  .ticker-item{
+    display:flex; align-items:center; gap:10px;
+    padding:18px 34px;
+    font-family:'Clash Display';
+    font-size:14px;
+    white-space:nowrap;
+    border-right:1px solid var(--line);
+  }
+  .ticker-item .t-lbl{color:var(--ink-dim); font-family:'Manrope'; font-weight:600; font-size:13px;}
+  .ticker-item .t-up{color:var(--teal);}
+  .ticker-item .t-down{color:var(--rose);}
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{padding:100px 0;}
+  .section-head{
+    max-width:600px;
+    margin-bottom:56px;
+  }
+  .section-head h2{
+    font-size:clamp(26px, 3.4vw, 38px);
+    margin-top:14px;
+  }
+  .section-head p{
+    color:var(--ink-dim);
+    font-size:16px;
+    margin-top:14px;
+  }
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .service-card{
+    background:var(--bg);
+    padding:30px 26px;
+    transition:background .2s ease;
+  }
+  .service-card:hover{background:var(--bg-panel);}
+  .service-card .glyph{
+    width:38px; height:38px;
+    border-radius:10px;
+    background:rgba(232,184,92,0.12);
+    color:var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:18px;
+    font-family:'Clash Display';
+    font-size:15px;
+  }
+  .service-card h3{
+    font-size:16.5px;
+    margin-bottom:8px;
+  }
+  .service-card p{
+    font-size:14px;
+    color:var(--ink-dim);
+  }
+
+  /* ---------- PROCESS ---------- */
+  .process{
+    position:relative;
+    padding-top:10px;
+  }
+  .process-line{
+    position:relative;
+    height:2px;
+    background:var(--line);
+    margin:0 0 0 0;
+  }
+  .process-steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+  }
+  .process-step{
+    position:relative;
+    padding-top:26px;
+  }
+  .process-step::before{
+    content:'';
+    position:absolute;
+    top:0; left:0;
+    width:12px; height:12px;
+    border-radius:50%;
+    background:var(--gold);
+    border:3px solid var(--bg);
+    box-shadow:0 0 0 1px var(--gold);
+  }
+  .process-step .p-tag{
+    font-size:12px; color:var(--ink-dim); font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  }
+  .process-step h3{font-size:17px; margin:8px 0 6px;}
+  .process-step p{font-size:13.5px; color:var(--ink-dim);}
+  .process-top-line{
+    display:flex; margin-bottom:0;
+  }
+
+  /* ---------- FORM ---------- */
+  .form-section{
+    background:var(--bg-panel);
+    border-radius:24px;
+    border:1px solid var(--line);
+    padding:56px;
+  }
+  .form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:44px;
+  }
+  .form-side h2{font-size:clamp(24px,3vw,32px); margin-bottom:16px;}
+  .form-side p{color:var(--ink-dim); margin-bottom:26px;}
+  .form-side ul{list-style:none;}
+  .form-side li{
+    display:flex; gap:10px; align-items:flex-start;
+    font-size:14.5px; color:var(--ink-dim);
+    margin-bottom:12px;
+  }
+  .form-side li::before{
+    content:'—'; color:var(--gold); flex-shrink:0;
+  }
+
+  form{display:flex; flex-direction:column; gap:16px;}
+  .field label{
+    display:block; font-size:13px; font-weight:700;
+    color:var(--ink-dim); margin-bottom:8px;
+  }
+  .field input[type=text], .field input[type=tel], .field select{
+    width:100%;
+    background:var(--bg-panel-2);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:13px 14px;
+    color:var(--ink);
+    font-family:'Manrope';
+    font-size:14.5px;
+    outline:none;
+    transition:border-color .15s ease;
+  }
+  .field input:focus, .field select:focus{border-color:var(--gold);}
+  .field select{appearance:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1l6 6 6-6' stroke='%23A7ADC4' stroke-width='2' fill='none' fill-rule='evenodd'/></svg>"); background-repeat:no-repeat; background-position:right 14px center;}
+
+  .toggle-row{display:flex; gap:10px;}
+  .toggle-opt{
+    flex:1;
+    text-align:center;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid var(--line);
+    background:var(--bg-panel-2);
+    font-size:14px; font-weight:600;
+    cursor:pointer;
+    color:var(--ink-dim);
+    transition:all .15s ease;
+  }
+  .toggle-opt.active{
+    background:rgba(232,184,92,0.14);
+    border-color:var(--gold);
+    color:var(--gold);
+  }
+
+  .submit-btn{
+    margin-top:6px;
+    background:var(--gold);
+    color:#06122A;
+    font-weight:700;
+    font-size:15.5px;
+    padding:16px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    transition:background .15s ease;
+  }
+  .submit-btn:hover{background:#7ED2FF;}
+  .form-note{font-size:12px; color:var(--ink-dim); text-align:center; margin-top:2px;}
+
+  .thanks{
+    display:none;
+    text-align:center;
+    padding:40px 10px;
+  }
+  .thanks .check{
+    width:56px; height:56px; border-radius:50%;
+    background:rgba(79,209,197,0.14);
+    color:var(--teal);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 20px;
+    font-size:26px;
+  }
+  .thanks h3{font-size:20px; margin-bottom:8px;}
+  .thanks p{color:var(--ink-dim); font-size:14.5px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    padding:40px 0;
+  }
+  .footer-inner{
+    display:flex; justify-content:space-between; align-items:center;
+    flex-wrap:wrap; gap:16px;
+  }
+  .footer-inner .fl{display:flex; gap:24px; flex-wrap:wrap;}
+  .footer-inner a{font-size:14px; color:var(--ink-dim);}
+  .footer-inner a:hover{color:var(--ink);}
+  .foot-copy{font-size:13px; color:var(--ink-dim);}
+
+  /* reveal animation */
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .process-steps{grid-template-columns:repeat(2,1fr); row-gap:36px;}
+    .form-grid{grid-template-columns:1fr; gap:30px;}
+    .form-section{padding:34px 24px;}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 20px;}
+    .services-grid{grid-template-columns:1fr;}
+    .process-steps{grid-template-columns:1fr;}
+    .stat-row{gap:26px;}
+    section{padding:70px 0;}
+    .toggle-row{flex-direction:row;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="logo"><span class="dot"></span><span>Arslanov Digital</span></div>
+    <a href="#form" class="nav-cta">Bepul audit</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Meta &amp; Telegram Ads</p>
+          <h1>Lidlar tasodifan<br>kelmaydi. <span class="accent">Tizim</span> ishlaydi.</h1>
+          <div class="btn-row">
+            <a href="#form" class="btn-primary">Bepul audit so'rash</a>
+            <a href="#xizmatlar" class="btn-secondary">Xizmatlarni ko'rish</a>
+          </div>
+          <div class="stat-row">
+            <div class="stat"><b>4 yil</b><span>marketing tajribasi</span></div>
+            <div class="stat"><b>1 yil</b><span>target bo'yicha ixtisoslashuv</span></div>
+            <div class="stat"><b>3 ta</b><span>faol yo'nalish: ta'lim, turizm, ishlab chiqarish</span></div>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="hero-panel-head">
+            <span class="tag">Kampaniya holati</span>
+            <span class="live"><span class="pulse"></span>onlayn</span>
+          </div>
+          <div class="metric-block">
+            <div class="metric">
+              <div class="lbl">CPA (lid narxi)</div>
+              <div class="val">$1.4</div>
+              <div class="delta up">▼ 32% pasaydi</div>
+            </div>
+            <div class="metric">
+              <div class="lbl">ROAS</div>
+              <div class="val">4.2x</div>
+              <div class="delta up">▲ 1.6x o'sdi</div>
+            </div>
+          </div>
+          <div class="mini-bars" aria-hidden="true">
+            <i style="height:35%"></i><i style="height:52%"></i><i style="height:40%"></i>
+            <i style="height:68%"></i><i style="height:58%"></i><i style="height:80%"></i>
+            <i style="height:70%"></i><i style="height:92%"></i><i style="height:100%"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker-section" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack"></div>
+  </div>
+
+  <section id="xizmatlar">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Xizmatlar</p>
+        <h2>Bitta odam — butun reklama tizimi</h2>
+        <p>Har bir xizmat alohida ham, birgalikda ham ishlaydi. Sizga kerakli qismini tanlaysiz.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal"><div class="glyph">Au</div><h3>Audit</h3><p>Joriy reklama holatini tekshirib, byudjet qayerda behuda ketayotganini topamiz.</p></div>
+        <div class="service-card reveal"><div class="glyph">An</div><h3>Analiz</h3><p>Auditoriya va raqobatchilar tahlili — kim, qayerda, qanday reklama bilan ishlayapti.</p></div>
+        <div class="service-card reveal"><div class="glyph">Ss</div><h3>Ssenariy</h3><p>Kreativ va xabar strategiyasi — nima deyish, kimga, qaysi formatda.</p></div>
+        <div class="service-card reveal"><div class="glyph">Tg</div><h3>Target sozlash</h3><p>Meta va Telegram Ads kampaniyalarini to'liq sozlash va yuritish.</p></div>
+        <div class="service-card reveal"><div class="glyph">Crm</div><h3>CRM ulash</h3><p>Mavjud CRM'ingizga lid, DM va CAPI orqali ulanamiz. CRM qurmaymiz — bor tizimga integratsiya qilamiz.</p></div>
+        <div class="service-card reveal"><div class="glyph">Bot</div><h3>Chatbot</h3><p>DM va kommentariyalarga avtomatik javob, lidlarni saralab beruvchi bot.</p></div>
+        <div class="service-card reveal"><div class="glyph">Hi</div><h3>Kunlik hisobot</h3><p>Har kuni aniq raqamlar — necha lid, qancha xarajat, qaysi kanal yaxshi ishlayapti.</p></div>
+        <div class="service-card reveal"><div class="glyph">M+T</div><h3>Meta + Telegram Ads</h3><p>Ikkala platformada bir vaqtda, bitta strategiya ostida boshqaruv.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Jarayon</p>
+        <h2>Ishlash tartibi</h2>
+      </div>
+      <div class="process-steps reveal">
+        <div class="process-step"><span class="p-tag">1-bosqich</span><h3>Audit</h3><p>Joriy holat va imkoniyatlarni ko'rib chiqamiz.</p></div>
+        <div class="process-step"><span class="p-tag">2-bosqich</span><h3>Sozlash</h3><p>Kampaniya, CRM va chatbotni ishga tayyorlaymiz.</p></div>
+        <div class="process-step"><span class="p-tag">3-bosqich</span><h3>Ishga tushirish</h3><p>Reklama yoqiladi, birinchi lidlar kela boshlaydi.</p></div>
+        <div class="process-step"><span class="p-tag">4-bosqich</span><h3>Kunlik nazorat</h3><p>Har kuni hisobot va optimizatsiya.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="form">
+    <div class="wrap">
+      <div class="form-section reveal">
+        <div class="form-grid">
+          <div class="form-side">
+            <p class="eyebrow">Bepul audit</p>
+            <h2>Biznesingiz haqida qisqacha ayting</h2>
+            <p>Shu ma'lumotlar asosida sizga mos taklif va narx tayyorlab, ko'rsatilgan vaqtda bog'lanamiz.</p>
+          </div>
+
+          <div>
+            <form id="leadForm">
+              <div class="field">
+                <label>Hozirda targetdan foydalanasizmi?</label>
+                <div class="toggle-row" id="targetToggle">
+                  <div class="toggle-opt" data-value="Ha">Ha</div>
+                  <div class="toggle-opt" data-value="Yo'q">Yo'q</div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="budget">Target uchun oyiga qancha byudjet ajratishga tayyorsiz?</label>
+                <select id="budget" required>
+                  <option value="" disabled selected>Tanlang</option>
+                  <option>$100–300</option>
+                  <option>$300–600</option>
+                  <option>$600–1200</option>
+                  <option>$1200 dan yuqori</option>
+                  <option>Hali aniq emas</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="niche">Biznesingiz qaysi yo'nalishda?</label>
+                <input type="text" id="niche" placeholder="Masalan: ta'lim markazi, turizm agentligi, ishlab chiqarish..." required>
+              </div>
+
+              <div class="field">
+                <label for="name">Ismingiz</label>
+                <input type="text" id="name" placeholder="Ismingiz" required>
+              </div>
+
+              <div class="field">
+                <label for="phone">Telefon raqamingiz</label>
+                <input type="tel" id="phone" placeholder="+998 90 123 45 67" required>
+              </div>
+
+              <div class="field">
+                <label for="time">Siz bilan qaysi vaqtda bog'langanimiz maqul?</label>
+                <select id="time" required>
+                  <option value="" disabled selected>Tanlang</option>
+                  <option>Ertalab (9:00–12:00)</option>
+                  <option>Kunduzi (12:00–17:00)</option>
+                  <option>Kechqurun (17:00–20:00)</option>
+                  <option>Istalgan vaqt</option>
+                </select>
+              </div>
+
+              <button type="submit" class="submit-btn">Yuborish</button>
+              <p class="form-note">Ma'lumotlaringiz faqat aloqa uchun ishlatiladi.</p>
+            </form>
+
+            <div class="thanks" id="thanksBlock">
+              <div class="check">✓</div>
+              <h3>Rahmat!</h3>
+              <p>Ma'lumotlaringiz qabul qilindi. Tanlagan vaqtingizda siz bilan bog'lanamiz.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="foot-copy">© 2026 Arslanov Digital — Meta va Telegram Ads bo'yicha xizmatlar</div>
+    <div class="fl">
+      <a href="https://t.me/arslanov_digital" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://www.instagram.com/arslanov_digital/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<!-- META PIXEL — Arslanov Digital -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1832602307711512');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1832602307711512&ev=PageView&noscript=1"
+/></noscript>
+
+<script>
+  // ---------- Ticker content ----------
+  const tickerData = [
+    {lbl:'CPA', val:'-32%', cls:'t-up'},
+    {lbl:'ROAS', val:'4.2x', cls:'t-up'},
+    {lbl:'Lidlar', val:'+180%', cls:'t-up'},
+    {lbl:'CTR', val:'2.1%', cls:'t-up'},
+    {lbl:'CPM', val:'-18%', cls:'t-up'},
+    {lbl:'Lid sifati', val:'60%+', cls:'t-up'},
+    {lbl:'Xarajat', val:'-15%', cls:'t-down'},
+  ];
+  const track = document.getElementById('tickerTrack');
+  function buildTicker(){
+    let html = '';
+    for(let i=0;i<2;i++){
+      tickerData.forEach(d=>{
+        html += `<div class="ticker-item"><span class="t-lbl">${d.lbl}</span><span class="${d.cls}">${d.val}</span></div>`;
+      });
+    }
+    track.innerHTML = html;
+  }
+  buildTicker();
+
+  // ---------- Toggle (Ha / Yo'q) ----------
+  const toggleWrap = document.getElementById('targetToggle');
+  let targetUsage = '';
+  toggleWrap.querySelectorAll('.toggle-opt').forEach(opt=>{
+    opt.addEventListener('click', ()=>{
+      toggleWrap.querySelectorAll('.toggle-opt').forEach(o=>o.classList.remove('active'));
+      opt.classList.add('active');
+      targetUsage = opt.dataset.value;
+    });
+  });
+
+  // ---------- Form submit ----------
+  const form = document.getElementById('leadForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const data = {
+      target_hozir: targetUsage,
+      byudjet: document.getElementById('budget').value,
+      yonalish: document.getElementById('niche').value,
+      ism: document.getElementById('name').value,
+      telefon: document.getElementById('phone').value,
+      vaqt: document.getElementById('time').value,
+    };
+
+    // Make.com webhook manzili — Sheets'ga lid tushishi shu URL orqali bo'ladi
+    const WEBHOOK_URL = 'https://hook.us2.make.com/pgztgtt422usepz8s6a4clsfh4c0xhjq';
+
+    fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(data)
+    }).catch(err => console.error('Webhook xato:', err));
+
+    if (typeof fbq === 'function') { fbq('track', 'Lead'); }
+
+    form.style.display = 'none';
+    document.getElementById('thanksBlock').style.display = 'block';
+  });
+
+  // ---------- Reveal on scroll ----------
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, {threshold:0.12});
+  revealEls.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
