@@ -269,7 +269,7 @@
   /* ---------- SERVICES ---------- */
   .services-grid{
     display:grid;
-    grid-template-columns:repeat(4, 1fr);
+    grid-template-columns:repeat(2, 1fr);
     gap:1px;
     background:var(--line);
     border:1px solid var(--line);
@@ -342,10 +342,11 @@
 
   /* ---------- FORM ---------- */
   .form-section{
-    background:var(--bg-panel);
+    background:linear-gradient(150deg, #123B85 0%, #0E2E68 55%, #0B2454 100%);
     border-radius:24px;
-    border:1px solid var(--line);
+    border:1px solid rgba(120,190,255,0.35);
     padding:56px;
+    box-shadow:0 40px 80px -30px rgba(20,90,220,0.45);
   }
   .form-grid{
     display:grid;
@@ -468,8 +469,11 @@
     .services-grid{grid-template-columns:1fr;}
     .process-steps{grid-template-columns:1fr;}
     .stat-row{gap:26px;}
-    section{padding:70px 0;}
+    section{padding:48px 0;}
     .toggle-row{flex-direction:row;}
+    .hero{padding:56px 0 0;}
+    .ticker-item{padding:12px 22px;}
+    .stat-row{margin-top:32px; padding-top:20px;}
   }
 </style>
 </head>
@@ -478,7 +482,7 @@
 <header class="nav">
   <div class="nav-inner">
     <div class="logo"><span class="dot"></span><span>Arslanov Digital</span></div>
-    <a href="#form" class="nav-cta">Bepul audit</a>
+    <a href="#form" class="nav-cta">Ariza qoldirish</a>
   </div>
 </header>
 
@@ -491,7 +495,7 @@
           <p class="eyebrow">Meta &amp; Telegram Ads</p>
           <h1>Lidlar tasodifan<br>kelmaydi. <span class="accent">Tizim</span> ishlaydi.</h1>
           <div class="btn-row">
-            <a href="#form" class="btn-primary">Bepul audit so'rash</a>
+            <a href="#form" class="btn-primary">Hoziroq ariza qoldirish</a>
             <a href="#xizmatlar" class="btn-secondary">Xizmatlarni ko'rish</a>
           </div>
           <div class="stat-row">
@@ -537,32 +541,13 @@
       <div class="section-head reveal">
         <p class="eyebrow">Xizmatlar</p>
         <h2>Bitta odam — butun reklama tizimi</h2>
-        <p>Har bir xizmat alohida ham, birgalikda ham ishlaydi. Sizga kerakli qismini tanlaysiz.</p>
+        <p>Audit'dan kunlik hisobotgacha bo'lgan yo'lni to'liq boshqaramiz.</p>
       </div>
       <div class="services-grid">
-        <div class="service-card reveal"><div class="glyph">Au</div><h3>Audit</h3><p>Joriy reklama holatini tekshirib, byudjet qayerda behuda ketayotganini topamiz.</p></div>
-        <div class="service-card reveal"><div class="glyph">An</div><h3>Analiz</h3><p>Auditoriya va raqobatchilar tahlili — kim, qayerda, qanday reklama bilan ishlayapti.</p></div>
-        <div class="service-card reveal"><div class="glyph">Ss</div><h3>Ssenariy</h3><p>Kreativ va xabar strategiyasi — nima deyish, kimga, qaysi formatda.</p></div>
-        <div class="service-card reveal"><div class="glyph">Tg</div><h3>Target sozlash</h3><p>Meta va Telegram Ads kampaniyalarini to'liq sozlash va yuritish.</p></div>
-        <div class="service-card reveal"><div class="glyph">Crm</div><h3>CRM ulash</h3><p>Mavjud CRM'ingizga lid, DM va CAPI orqali ulanamiz. CRM qurmaymiz — bor tizimga integratsiya qilamiz.</p></div>
-        <div class="service-card reveal"><div class="glyph">Bot</div><h3>Chatbot</h3><p>DM va kommentariyalarga avtomatik javob, lidlarni saralab beruvchi bot.</p></div>
-        <div class="service-card reveal"><div class="glyph">Hi</div><h3>Kunlik hisobot</h3><p>Har kuni aniq raqamlar — necha lid, qancha xarajat, qaysi kanal yaxshi ishlayapti.</p></div>
-        <div class="service-card reveal"><div class="glyph">M+T</div><h3>Meta + Telegram Ads</h3><p>Ikkala platformada bir vaqtda, bitta strategiya ostida boshqaruv.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="process">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">Jarayon</p>
-        <h2>Ishlash tartibi</h2>
-      </div>
-      <div class="process-steps reveal">
-        <div class="process-step"><span class="p-tag">1-bosqich</span><h3>Audit</h3><p>Joriy holat va imkoniyatlarni ko'rib chiqamiz.</p></div>
-        <div class="process-step"><span class="p-tag">2-bosqich</span><h3>Sozlash</h3><p>Kampaniya, CRM va chatbotni ishga tayyorlaymiz.</p></div>
-        <div class="process-step"><span class="p-tag">3-bosqich</span><h3>Ishga tushirish</h3><p>Reklama yoqiladi, birinchi lidlar kela boshlaydi.</p></div>
-        <div class="process-step"><span class="p-tag">4-bosqich</span><h3>Kunlik nazorat</h3><p>Har kuni hisobot va optimizatsiya.</p></div>
+        <div class="service-card reveal"><div class="glyph">Au</div><h3>Audit va tahlil</h3><p>Joriy holat, auditoriya va raqobatchilarni tekshirib, byudjet qayerda behuda ketayotganini topamiz.</p></div>
+        <div class="service-card reveal"><div class="glyph">Tg</div><h3>Strategiya va sozlash</h3><p>Kreativ ssenariy asosida Meta va Telegram Ads kampaniyalarini to'liq sozlaymiz.</p></div>
+        <div class="service-card reveal"><div class="glyph">Crm</div><h3>CRM va avtomatlashtirish</h3><p>Lid, DM va CAPI orqali mavjud CRM'ingizga ulaymiz, chatbot bilan javoblarni avtomatlashtiramiz.</p></div>
+        <div class="service-card reveal"><div class="glyph">Hi</div><h3>Yuritish va hisobot</h3><p>Ikkala platformada bir vaqtda boshqaruv, har kuni aniq raqamlar bilan hisobot.</p></div>
       </div>
     </div>
   </section>
