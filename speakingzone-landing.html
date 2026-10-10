@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Speaking Zone — Ingliz tilida suhbatlashing</title>
+<meta name="description" content="Telegram ichida — boshqa o'rganuvchilar va AI bilan har kuni 10 daqiqa ovozli ingliz tili mashqi.">
+<meta name="theme-color" content="#040819">
+<meta property="og:title" content="Speaking Zone — Ingliz tilida suhbatlashing">
+<meta property="og:description" content="Telegram ichida — boshqa o'rganuvchilar va AI bilan har kuni 10 daqiqa ovozli ingliz tili mashqi.">
+<meta property="og:image" content="https://speakingzone.ai/assets/og.png">
+<meta property="og:locale" content="uz_UZ">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;800&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1650156886541271');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1650156886541271&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+:root{
+  --blue:#0A1342;
+  --blue-deep:#040819;
+  --ink:#050A20;
+  --paper:#F3F4F9;
+  --white:#fff;
+  --sun:#E3C07A;
+  --line:#DDE1EE;
+  --muted:#566083;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Onest',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#37B6F2 0%,#229ED9 50%,#1672B8 100%);color:#fff;font:800 19px/1 'Onest',sans-serif;letter-spacing:.06em;padding:19px 34px;border-radius:14px;text-decoration:none;box-shadow:0 6px 0 #0F4F86,0 14px 30px -6px rgba(34,158,217,.55);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translateY(2px);box-shadow:0 4px 0 #0F4F86,0 10px 24px -6px rgba(34,158,217,.55)}
+.btn:active{transform:translateY(6px);box-shadow:0 0 0 #0F4F86}
+.btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.btn svg{width:22px;height:22px;flex:none}
+
+/* Hero */
+.hero{background:radial-gradient(120% 90% at 85% 0%,#1A2776 0%,#0A1342 45%,#040819 100%);color:#fff;padding:28px 0 72px;overflow:hidden}
+.brand{color:var(--sun);font-weight:800;font-size:19px;letter-spacing:-.01em;margin-bottom:48px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.04;letter-spacing:-.03em;font-weight:800;margin:0 0 20px}
+.lead{font-size:clamp(17px,2.2vw,20px);max-width:30em;color:#C6CEEA;margin:0 0 32px}
+.cta-line{font-size:clamp(18px,2.6vw,22px);font-weight:800;line-height:1.25;letter-spacing:-.01em;margin:0 0 14px;color:var(--sun)}
+.mid{text-align:center;padding:8px 0 72px}
+.mid .cta-line{color:var(--ink)}
+.final .cta-line{margin-bottom:16px}
+.hero .note{margin:18px 0 0;font-size:14px;color:#9FAAD3}
+
+/* Chat mock */
+.chat{background:#fff;color:var(--ink);border-radius:24px;padding:18px;box-shadow:0 30px 60px -20px rgba(2,6,25,.6);max-width:380px;justify-self:center;width:100%}
+.chat-head{display:flex;align-items:center;gap:10px;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:14px;font-weight:600}
+.dot{width:36px;height:36px;border-radius:50%;background:var(--ink);color:var(--sun);display:grid;place-items:center;font-size:13px;font-weight:800}
+.chat-head small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.msg{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:16px;margin-bottom:10px;max-width:88%;font-size:15px}
+.msg.me{margin-left:auto;background:var(--blue);color:#fff;border-bottom-right-radius:4px}
+.msg.bot{background:var(--paper);border-bottom-left-radius:4px}
+.wave{display:flex;align-items:center;gap:3px;height:26px}
+.wave i{display:block;width:3px;border-radius:2px;background:currentColor;height:var(--h);opacity:.9;animation:pulse 1.1s ease-in-out infinite;animation-delay:var(--d)}
+@keyframes pulse{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}
+.time{font-size:12px;opacity:.75;white-space:nowrap}
+
+/* Sections */
+section.block{padding:72px 0}
+h2{font-size:clamp(26px,4vw,38px);line-height:1.1;letter-spacing:-.025em;font-weight:800;margin:0 0 12px}
+.sub{color:var(--muted);margin:0 0 36px;max-width:36em}
+
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+.steps li{counter-increment:s;background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--sun);font-weight:800;margin-bottom:14px}
+.steps b{display:block;font-size:18px;margin-bottom:4px}
+.steps span{color:var(--muted);font-size:15px}
+
+.why{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 48px}
+.why-grid div{padding:18px 0;border-bottom:1px solid var(--line)}
+.why-grid b{display:block;font-size:18px}
+.why-grid span{color:var(--muted);font-size:15px}
+
+.final{background:radial-gradient(100% 120% at 50% 0%,#0E1A5A 0%,#040819 70%);color:#fff;text-align:center;padding:72px 0 120px}
+.final h2{margin-bottom:12px}
+.final p{color:#B7C0E3;margin:0 auto 28px;max-width:30em}
+
+footer{background:var(--ink);color:#9AA8D6;font-size:13px;padding:22px 0 calc(22px + env(safe-area-inset-bottom,0px))}
+
+/* Sticky mobile CTA */
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:rgba(4,8,25,.95);backdrop-filter:blur(8px);display:none;z-index:10}
+.sticky .btn{width:100%;padding:16px}
+.sticky .cta-line{font-size:14px;margin:0 0 8px;text-align:center}
+
+@media (max-width:820px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .steps{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .sticky{display:block}
+  .hero .btn{width:100%}
+  .hero{padding-bottom:56px}
+  .brand{margin-bottom:32px}
+}
+@media (prefers-reduced-motion:reduce){
+  .wave i{animation:none}
+  html{scroll-behavior:auto}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand">Speaking Zone</div>
+    <div class="hero-grid">
+      <div>
+        <h1>Ingliz tilida gapirishni Speaking Zone bilan boshlang</h1>
+        <p class="lead">Har kuni 10 daqiqa ovozli mashq: boshqa o'rganuvchilar va AI bilan ingliz tilida suhbatlashing, darajangizni oshiring.</p>
+        <p class="cta-line">Bugun boshlang — birinchi ovozli mashq atigi 10 daqiqa.</p>
+        <a class="btn js-cta" href="https://t.me/SpeakingZoneAIBot?start=utm_ig_oct_2026">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.5c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6.1 13.1 1.2 11.6c-1.1-.3-1.1-1 .2-1.5L20.5 2.7c.9-.3 1.7.2 1.4 1.6Z"/></svg>
+          BOSHLASH
+        </a>
+        <p class="note">Ro'yxatdan o'tish shart emas — bot Telegram ichida ochiladi.</p>
+      </div>
+
+      <div class="chat" aria-hidden="true">
+        <div class="chat-head"><div class="dot">SZ</div><div>Speaking Zone<small>bot</small></div></div>
+        <div class="msg bot">
+          <div class="wave" style="color:var(--blue)">
+            <i style="--h:10px;--d:0s"></i><i style="--h:20px;--d:.1s"></i><i style="--h:14px;--d:.2s"></i><i style="--h:24px;--d:.3s"></i><i style="--h:12px;--d:.4s"></i><i style="--h:22px;--d:.5s"></i><i style="--h:9px;--d:.6s"></i><i style="--h:18px;--d:.7s"></i>
+          </div>
+          <span class="time">0:07</span>
+        </div>
+        <div class="msg bot">What did you do this weekend?</div>
+        <div class="msg me">
+          <div class="wave">
+            <i style="--h:12px;--d:.05s"></i><i style="--h:22px;--d:.15s"></i><i style="--h:16px;--d:.25s"></i><i style="--h:24px;--d:.35s"></i><i style="--h:10px;--d:.45s"></i><i style="--h:20px;--d:.55s"></i><i style="--h:14px;--d:.65s"></i><i style="--h:22px;--d:.75s"></i><i style="--h:11px;--d:.85s"></i>
+          </div>
+          <span class="time">0:12</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Boshlash uchun uch qadam</h2>
+    <p class="sub">Alohida ilova yuklash kerak emas. Hammasi Telegram ichida.</p>
+    <ol class="steps">
+      <li><b>Botni oching</b><span>Yuqoridagi tugmani bosing — Telegram'da Speaking Zone boti ochiladi.</span></li>
+      <li><b>Start bosing</b><span>Bot sizga mashqni qanday boshlashni ko'rsatadi.</span></li>
+      <li><b>Ovoz yuboring</b><span>Ingliz tilida gapiring. Javobni AI yoki boshqa o'rganuvchi beradi.</span></li>
+    </ol>
+  </div>
+</section>
+
+
+<div class="mid">
+  <div class="wrap">
+    <p class="cta-line">Uch qadam, bitta bosish. Tayyormisiz?</p>
+    <a class="btn js-cta" href="https://t.me/SpeakingZoneAIBot?start=utm_ig_oct_2026">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.5c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6.1 13.1 1.2 11.6c-1.1-.3-1.1-1 .2-1.5L20.5 2.7c.9-.3 1.7.2 1.4 1.6Z"/></svg>
+      BOSHLASH
+    </a>
+  </div>
+</div>
+
+<section class="block why">
+  <div class="wrap">
+    <h2>Gapirish — eng tez o'sadigan ko'nikma</h2>
+    <p class="sub">Kitobdan o'qish bilan gapira olish boshqa narsa. Speaking Zone sizni gapirishga undaydi.</p>
+    <div class="why-grid">
+      <div><b>Har kuni 10 daqiqa</b><span>Qisqa mashq kun tartibingizga oson sig'adi.</span></div>
+      <div><b>AI bilan suhbat</b><span>Xato qilishdan qo'rqmasdan, xohlagan vaqtda mashq qiling.</span></div>
+      <div><b>Boshqa o'rganuvchilar bilan</b><span>Jonli suhbatdoshlar bilan ingliz tilida gaplashing.</span></div>
+      <div><b>Telegram ichida</b><span>Yangi ilova yo'q — o'zingiz bilgan chatda mashq qiling.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Bugun birinchi mashqni boshlang</h2>
+    <p>Botni oching va ingliz tilida birinchi ovozli xabaringizni yuboring.</p>
+    <p class="cta-line">Gapirishni ertaga qoldirmang. Birinchi xabaringizni hozir yuboring!</p>
+    <a class="btn js-cta" href="https://t.me/SpeakingZoneAIBot?start=utm_ig_oct_2026">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.5c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6.1 13.1 1.2 11.6c-1.1-.3-1.1-1 .2-1.5L20.5 2.7c.9-.3 1.7.2 1.4 1.6Z"/></svg>
+      BOSHLASH
+    </a>
+  </div>
+</section>
+
+<footer><div class="wrap">© Speaking Zone · speakingzone.ai</div></footer>
+
+<div class="sticky">
+  <p class="cta-line">Bugun 10 daqiqa gapiring!</p>
+  <a class="btn js-cta" href="https://t.me/SpeakingZoneAIBot?start=utm_ig_oct_2026">BOSHLASH</a>
+</div>
+
+<script>
+// Har bir CTA bosilganda Meta'ga Lead eventini yuboramiz, so'ng Telegram'ga o'tamiz
+(function () {
+  var fired = false;
+  document.querySelectorAll('.js-cta').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var url = a.href;
+      var go = function () { window.location.href = url; };
+      if (!fired && typeof fbq === 'function') {
+        fired = true;
+        fbq('track', 'Lead');
+        setTimeout(go, 250);
+      } else {
+        go();
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
